@@ -33,7 +33,6 @@ public class AssignmentFlipkartAmazon extends BasePage {
 	@Test
 	public void TestFlipkartSearch() throws InterruptedException {
 
-
 		LandingPage lp= new LandingPage(driver);
 		AddCartPage ac= new AddCartPage(driver);
 		SearchPage sp= new  SearchPage(driver);
@@ -47,8 +46,7 @@ public class AssignmentFlipkartAmazon extends BasePage {
 
 		//Checking page is navigated with the expected title
 		String actualTitle = driver.getTitle();
-		//String expected = "Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!";
-		//Assert.assertEquals(actual, expected);
+		
 		Reporter.log("Page Navigated." + "<br>", true);
 
 		//Clicking on Cross button
@@ -67,13 +65,13 @@ public class AssignmentFlipkartAmazon extends BasePage {
 		lp.ClickSearchIcon().click();
 		log.info("search icon is clicked");
 
-		String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
+		String parentWindowHandler = driver.getWindowHandle();
 		String subWindowHandler = null;
 
 		//click on first item
 		lp.SelectFirstItem().click();
 
-		Set<String> handles = driver.getWindowHandles(); // get all window handles
+		Set<String> handles = driver.getWindowHandles(); 
 		Iterator<String> iterator = handles.iterator();
 		while (iterator.hasNext()){
 			subWindowHandler = iterator.next();
@@ -82,9 +80,8 @@ public class AssignmentFlipkartAmazon extends BasePage {
 		Reporter.log("Focus is on subwindowHandler");
 
 		String actualProductName = sp.ProductNameFromFK().getText();
-		//String expectedProductName = "Redmi Note 8 ( 64 GB Storage, 4 GB RAM )";
-		//Assert.assertEquals(actual, expected);
-		System.out.println("passing product ***Redmi Note 8 ( 64 GB Storage, 4 GB RAM)*** for searching in Amazon");
+	
+		System.out.println("**Providing product name for searching in Amazon**");
 
 		driver.manage().window().maximize();
 		Reporter.log("window is maximized");
@@ -105,7 +102,7 @@ public class AssignmentFlipkartAmazon extends BasePage {
 		String PriceAgain=ac.PriceAgainInFK().getText();
 		String[] price2 = PriceAgain.split("\n");
 		System.out.println("Again printing the price of an item is Rs:"+price2[1]);
-		//String str1=price2[1].toString();
+		String str1=price2[1].toString();
 
 		//navigating to amazon.in
 		driver.get(prop.getProperty("url2"));
@@ -129,20 +126,8 @@ public class AssignmentFlipkartAmazon extends BasePage {
 
 		Thread.sleep(2000);
 
-		//look here
-
-			
 		WebElement selectproductinamazon= sp.SelectSameProductInAmazon();
 		selectproductinamazon.click();
-			
-//			System.out.println("*****"+sp.SelectSameProductInAmazon(i).getText());
-//			if(actualProductName==selectproductinamazon) {
-//				sp.SelectSameProductInAmazon(i).click();
-//			}
-//			else {
-//				System.out.println("Product is not matching and available at amazon");
-//			}
-//		}
 		Thread.sleep(5000);
 
 		Set<String> handles2 = driver.getWindowHandles(); // get all window handles
@@ -152,7 +137,7 @@ public class AssignmentFlipkartAmazon extends BasePage {
 		}
 		driver.switchTo().window(subWindowHandler2);
 		Reporter.log("Focus is on subwindowHandler2");
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 
 		WebElement priceInAmazon=ac.PriceInAmazon();
 		System.out.println("Price of item in amazon is Rs: "+priceInAmazon.getText());
@@ -173,7 +158,13 @@ public class AssignmentFlipkartAmazon extends BasePage {
 
 		String priceAgain2= ac.PriceInAmazonAgain().getText();
 		System.out.println("Final price of item in amazon is Rs:"+priceAgain2);
-		//	String str2=priceAgain2;
+		String str2=priceAgain2;
+		if(str1.equalsIgnoreCase(str2)) {
+			System.out.println("Price is same in both the sites");
+		}else {
+			System.out.println("Price is not same");
+		}
+		
 	}
 	
 	@AfterTest
