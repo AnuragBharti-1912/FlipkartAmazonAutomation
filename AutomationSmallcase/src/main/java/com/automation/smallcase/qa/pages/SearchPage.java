@@ -18,7 +18,7 @@ public class SearchPage extends  BasePage {
 	public WebElement ProductNameFromFK() {
 		return driver.findElement(productname);
 	}
-	private By selectsameproduct=By.xpath("//span[contains(text(),'Redmi Note 8 (Neptune Blue, 4GB RAM, 64GB Storage)')]");
+	private By selectsameproduct=By.xpath("//div[@data-cel-widget=\"search_result_1\"]/div/span/div/div/div[2]/div[2]/div/div/div/div/div/h2/a/span");
 	public WebElement SelectSameProductInAmazon() {
 		return driver.findElement(selectsameproduct);	
 		}
