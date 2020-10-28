@@ -160,10 +160,11 @@ public class AssignmentFlipkartAmazon extends BasePage {
 		String priceAgain2= ac.PriceInAmazonAgain().getText();
 		System.out.println("Final price of item in amazon is Rs:"+priceAgain2);
 		String str2=priceAgain2;
+		
 		if(str1.equalsIgnoreCase(str2)) {
 			System.out.println("Price is same in both the sites");
 		}else {
-			System.out.println("Price is not same");
+			System.out.println("Price is not same in both the sites");
 		}
 	}
 
