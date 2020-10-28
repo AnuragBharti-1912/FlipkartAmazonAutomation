@@ -24,10 +24,9 @@ public class BasePage {
 
 		prop = new Properties();
 		Path = new File("").getAbsolutePath();
-		//FileInputStream fis=  new FileInputStream(Path+ "\\src\\main\\java\\com\\wordpress\\qa\\config\\file.properties");
-		FileInputStream fis=  new FileInputStream("C:\\Users\\Anurag Bharti\\eclipse-workspace\\AutomationSmallcase\\src\\main\\java\\com\\automation\\smallcase\\qa\\config\\file.properties");
+		FileInputStream fis=  new FileInputStream(Path+ "\\src\\main\\java\\com\\automation\\smallcase\\qa\\config\\file.properties");
 		prop.load(fis);
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Anurag Bharti\\eclipse-workspace\\AutomationSmallcase\\drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", Path+"\\drivers\\chromedriver.exe");
 
 		String browsername=prop.getProperty("browser");
 		if (browsername.equals("chrome")) {

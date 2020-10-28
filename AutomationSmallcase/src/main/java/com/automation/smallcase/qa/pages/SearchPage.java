@@ -15,11 +15,13 @@ public class SearchPage extends  BasePage {
 	public WebDriver driver;
 
 	private By productname=(By.xpath("//span[@class='_35KyD6']"));
+
 	public WebElement ProductNameFromFK() {
 		return driver.findElement(productname);
 	}
 	private By selectsameproduct=By.xpath("//div[@data-cel-widget=\"search_result_1\"]/div/span/div/div/div[2]/div[2]/div/div/div/div/div/h2/a/span");
+
 	public WebElement SelectSameProductInAmazon() {
 		return driver.findElement(selectsameproduct);	
-		}
+	}
 }

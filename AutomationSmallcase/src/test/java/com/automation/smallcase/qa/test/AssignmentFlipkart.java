@@ -87,8 +87,8 @@ public class AssignmentFlipkart extends BasePage {
 		String doubleitemprices=ac.ItemPrices().getText();
 		String[] twoitemprice = doubleitemprices.split("\n");
 		System.out.println("Price of 2 items is Rs:"+twoitemprice[1]);
-
 	}
+
 	@AfterTest
 	public void teardown() {
 		driver.quit();

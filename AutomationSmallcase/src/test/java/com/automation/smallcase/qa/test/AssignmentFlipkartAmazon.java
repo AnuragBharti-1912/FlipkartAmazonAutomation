@@ -30,6 +30,7 @@ public class AssignmentFlipkartAmazon extends BasePage {
 	public void initialize() throws IOException{
 		driver=initializeDriver();
 	}
+
 	@Test
 	public void TestFlipkartSearch() throws InterruptedException {
 
@@ -46,7 +47,7 @@ public class AssignmentFlipkartAmazon extends BasePage {
 
 		//Checking page is navigated with the expected title
 		String actualTitle = driver.getTitle();
-		
+
 		Reporter.log("Page Navigated." + "<br>", true);
 
 		//Clicking on Cross button
@@ -80,7 +81,7 @@ public class AssignmentFlipkartAmazon extends BasePage {
 		Reporter.log("Focus is on subwindowHandler");
 
 		String actualProductName = sp.ProductNameFromFK().getText();
-	
+
 		System.out.println("**Providing product name for searching in Amazon**");
 
 		driver.manage().window().maximize();
@@ -164,9 +165,8 @@ public class AssignmentFlipkartAmazon extends BasePage {
 		}else {
 			System.out.println("Price is not same");
 		}
-		
 	}
-	
+
 	@AfterTest
 	public void teardown() {
 		driver.quit();

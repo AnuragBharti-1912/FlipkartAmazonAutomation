@@ -32,16 +32,17 @@ public class AddCartPage extends  BasePage {
 		return driver.findElement(incrementitem);
 	}
 	private By priceFK=(By.cssSelector("div._1vC4OE._3qQ9m1"));
-	
+
 	public WebElement PriceInFK() {
-	return driver.findElement(priceFK);
-}
+		return driver.findElement(priceFK);
+	}
 	private By priceAgainInFk=(By.xpath("//div[@class='hJYgKM'][1]"));
-	
+
 	public WebElement PriceAgainInFK() {
 		return driver.findElement(priceAgainInFk);
 	}
 	private By priceinamazon=By.cssSelector("#priceblock_dealprice");
+	
 	public WebElement PriceInAmazon() {
 		return driver.findElement(priceinamazon);
 	}
@@ -50,22 +51,23 @@ public class AddCartPage extends  BasePage {
 	public WebElement clickAddToCartAmazon() {
 		return driver.findElement(addCartAmazon);
 	}	
-	
+
 	private By closesidesheet=(By.id("attach-close_sideSheet-link"));
-	
+
 	public WebElement CloseSideSheet() {
 		return driver.findElement(closesidesheet);
 
 	}
-	
-private By navigatecart=(By.id("nav-cart-count"));
-	
+
+	private By navigatecart=(By.id("nav-cart-count"));
+
 	public WebElement NavigateToCart() {
 		return driver.findElement(navigatecart);
 
 	}
-	
+
 	private By priceinamazonagain=By.xpath("//body/div[@id='a-page']/div[4]/div[1]/div[5]/div[1]/div[1]/div[3]/form[1]/div[1]/div[3]/div[1]/div[1]/span[2]/span[1]");
+	
 	public WebElement PriceInAmazonAgain() {
 		return driver.findElement(priceinamazonagain);
 	}
